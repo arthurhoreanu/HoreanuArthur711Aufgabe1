@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Log {
@@ -6,9 +7,9 @@ public class Log {
     private String name;
     private House house;
     private String event;
-    private Date date;
+    private LocalDate date;
 
-    public Log(int id, String name, House house, String event, Date date) {
+    public Log(int id, String name, House house, String event, LocalDate date) {
         this.id = id;
         this.name = name;
         this.house = house;
@@ -48,11 +49,11 @@ public class Log {
         this.event = event;
     }
 
-    public Date getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 

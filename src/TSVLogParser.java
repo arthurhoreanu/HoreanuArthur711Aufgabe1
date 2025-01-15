@@ -2,6 +2,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -25,7 +27,7 @@ public class TSVLogParser {
                 String name = field[1];
                 House house = House.valueOf(field[2].toUpperCase());
                 String event = field[3];
-                Date date = new Date(Long.parseLong(field[4]));
+                LocalDate date = LocalDate.parse(field[4]);
                 logEntries.add(new Log(id, name, house, event, date));
             }
         }
