@@ -31,8 +31,6 @@ public class View {
                 case "2":
                     sortStarkEvents();
                     break;
-//                case "3":
-//                    controller.calculateAndSaveResults("src/logs/result.txt");
                 default:
                     System.out.println("Invalid option. Please try again.");
             }
@@ -40,12 +38,18 @@ public class View {
 
     }
 
+    /**
+     * Filters Character by first letter.
+     */
     private void filterCharacterByLetter() {
         System.out.print("Enter a capital letter: ");
         String letter = scanner.nextLine();
         controller.filterCharacterByLetter(letter).forEach(System.out::println);
     }
 
+    /**
+     * Sort Stark events by date.
+     */
     private void sortStarkEvents() {
         controller.sortStarkEvents().forEach(System.out::println);
     }

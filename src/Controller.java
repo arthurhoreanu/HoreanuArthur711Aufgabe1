@@ -8,6 +8,11 @@ public class Controller {
         this.logEntries = logEntries;
     }
 
+    /**
+     * Filter characters by user input first letter.
+     * @param letter
+     * @return
+     */
     public List<String> filterCharacterByLetter(String letter) {
         Set<String> uniqueCharacters = new HashSet<>();
         for (Log entry : logEntries) {
@@ -19,6 +24,10 @@ public class Controller {
         return new ArrayList<>(uniqueCharacters); // Converting to List, printStudents needs a List parameter
     }
 
+    /**
+     * Sort Stark events by date.
+     * @return
+     */
     public List<Log> sortStarkEvents() {
         List<Log> starkEvents = new ArrayList<>();
         for (Log entry : logEntries) {
