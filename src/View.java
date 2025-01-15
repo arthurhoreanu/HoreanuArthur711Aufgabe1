@@ -21,17 +21,16 @@ public class View {
             System.out.println();
             System.out.println("Press:");
             System.out.println("1. Filter character by letter");
-            System.out.println("2. Avengers with at least one success");
-            System.out.println("3. Sort Avengers' scores");
+            System.out.println("2. Sort Stark events by date");
             String input = scanner.nextLine();
 
             switch (input) {
                 case "1":
                     filterCharacterByLetter();
                     break;
-//                case "2":
-//                    controller.oneSuccess();
-//                    break;
+                case "2":
+                    sortStarkEvents();
+                    break;
 //                case "3":
 //                    controller.calculateAndSaveResults("src/logs/result.txt");
                 default:
@@ -45,5 +44,9 @@ public class View {
         System.out.print("Enter a capital letter: ");
         String letter = scanner.nextLine();
         controller.filterCharacterByLetter(letter).forEach(System.out::println);
+    }
+
+    private void sortStarkEvents() {
+        controller.sortStarkEvents().forEach(System.out::println);
     }
 }

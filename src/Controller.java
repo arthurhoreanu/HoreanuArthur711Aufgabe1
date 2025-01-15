@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class Controller {
 
@@ -22,5 +19,14 @@ public class Controller {
         return new ArrayList<>(uniqueCharacters); // Converting to List, printStudents needs a List parameter
     }
 
+    public List<Log> sortStarkEvents() {
+        List<Log> starkEvents = new ArrayList<>();
+        for (Log entry : logEntries) {
+            if(entry.getHouse()== House.STARK)
+                starkEvents.add(entry);
+        }
+        starkEvents.sort(Comparator.comparing(Log::getDate));
+        return starkEvents;
+    }
 
 }
