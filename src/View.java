@@ -20,15 +20,15 @@ public class View {
         while (true) {
             System.out.println();
             System.out.println("Press:");
-            System.out.println("1. Sort by difficulty");
+            System.out.println("1. Filter character by letter");
             System.out.println("2. Avengers with at least one success");
             System.out.println("3. Sort Avengers' scores");
             String input = scanner.nextLine();
 
             switch (input) {
-//                case "1":
-//                    controller.sortDifficulty();
-//                    break;
+                case "1":
+                    filterCharacterByLetter();
+                    break;
 //                case "2":
 //                    controller.oneSuccess();
 //                    break;
@@ -38,5 +38,12 @@ public class View {
                     System.out.println("Invalid option. Please try again.");
             }
         }
+
+    }
+
+    private void filterCharacterByLetter() {
+        System.out.print("Enter a capital letter: ");
+        String letter = scanner.nextLine();
+        controller.filterCharacterByLetter(letter).forEach(System.out::println);
     }
 }
